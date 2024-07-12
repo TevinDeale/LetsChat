@@ -1,7 +1,7 @@
 {
   "name": "logger",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "logger.js",
   "license": "MIT",
   "dependencies": {
     "winston": "^3.13.0"

@@ -1,5 +1,5 @@
 // shared/utils/logger.js
-import { createLogger, format, transports } from 'winston';
+const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, printf, colorize } = format;
 
 // Define a custom log format
@@ -25,4 +25,4 @@ const createLoggerInstance = (serviceName) => {
   });
 };
 
-export default { createLoggerInstance };
+module.exports = { createLoggerInstance };
