@@ -1,3 +1,4 @@
 *node_modules
 *.env
 *.log
+/auth-service/src/main/resources/application-prod.properties
