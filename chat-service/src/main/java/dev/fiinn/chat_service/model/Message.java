@@ -47,4 +47,17 @@ public class Message {
     private Set<UUID> deliveredTo = new HashSet<>();
 
     private LocalDateTime readAt;
+
+    @Builder.Default
+    private boolean failed = false;
+
+    private String errorMessage;
+
+    public void addToReadBy(UUID userId) {
+        readBy.add(userId);
+    }
+
+    public void addToDeliveredTo(UUID userId) {
+        deliveredTo.add(userId);
+    }
 }

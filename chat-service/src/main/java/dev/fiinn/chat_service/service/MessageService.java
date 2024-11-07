@@ -13,5 +13,10 @@ public interface MessageService {
     List<Message> getUnreadMessages(String threadId, UUID userId);
     boolean deleteMessage(String messageId, UUID userId);
     boolean markMessageAsRead(String messageId, UUID userId);
+    boolean markMessageDelivered(String messageId, UUID userId);
+    boolean markMessageAsSent(String messageId, UUID userId);
     Integer getUnreadMessageCount(String threadId, UUID userId);
+    Message findById(String messageId);
+    public void makeMessageAsFailed(String messageId, String error);
+    public void retryFailedMessage(String messageId);
 }
