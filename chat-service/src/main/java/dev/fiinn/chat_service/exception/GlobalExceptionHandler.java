@@ -110,6 +110,20 @@ public class GlobalExceptionHandler {
                 ));
     }
 
+    @ExceptionHandler(MessageErrorException.class)
+    ResponseEntity<ErrorResponseDto> handleMessageErrorException(
+            Exception err,
+            WebRequest request) {
+
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(DtoConverter.toErrorResponse(
+                        "Error Processing message",
+                        err.getMessage(),
+                        getPath(request),
+                        HttpStatus.INTERNAL_SERVER_ERROR.value()
+                ));
+    }
+
     private String getPath(WebRequest request) {
         return ((ServletWebRequest) request).getRequest().getRequestURI();
     }
